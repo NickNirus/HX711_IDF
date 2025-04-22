@@ -1,7 +1,18 @@
-# HX711_IDF
-Library for HX711 for esp32 IDF 
+# ESP-IDF HX711 component
+ESP-IDF component for interfacing with the [Avia Semiconductor HX711 24-Bit ADC](http://www.dfrobot.com/image/data/SEN0160/hx711_english.pdf), based on a PlatformIO library by https://github.com/bogde/HX711 and originally adapted for ESP-IDF by https://github.com/akshayvernekar/HX711_IDF.
 
-An Esp32 IDF implementation for interfacing the Avia Semiconductor HX711 24-Bit Analog-to-Digital Converter (ADC) for Weight Scales. After much searching I realised there are many implementation for ESp32's Arudino IDE but none for IDF, so making the repo public which I used for a personal project. Datasheet for the ADC chip is below
-https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/hx711_english.pdf
+## Installation
+### Manual
+* Locate your `idf_component.yml` file and add the following to the `dependencies` section:
+```yml
+dependencies:
+  # ...
+  NickNirus/HX711_IDF:
+    git: https://github.com/NickNirus/HX711_IDF
+    version: <commit_hash> # replace with the full hash of the commit that should be used
+```
 
-Thanks to https://github.com/bogde/HX711  for providing a starting point .
+* Build your ESP-IDF project or run 
+```bash
+idf.py update-dependencies
+```

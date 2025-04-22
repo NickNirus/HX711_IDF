@@ -2,12 +2,5 @@
 # CMakeLists in this exact order for cmake to work correctly
 cmake_minimum_required(VERSION 3.5)
 
-idf_component_register(
-    INCLUDE_DIRS
-        "src"
-    SRCS
-        "src/HX711.c"
-        "src/HX711.h"
-    REQUIRES
-        driver
-)
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+project(hx711-usage-example)
